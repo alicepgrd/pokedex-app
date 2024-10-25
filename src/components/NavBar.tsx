@@ -1,3 +1,5 @@
+import PokemonCard from "./PokemonCard";
+
 interface Pokemon {
   name: string;
   imgSrc?: string;
@@ -10,7 +12,7 @@ interface NavBarProps {
 }
 
 function NavBar({ pokemonIndex, pokemonList, setPokemonIndex }: NavBarProps) {
-  const handleNext = () => {
+  /*const handleNext = () => {
     if (pokemonIndex < pokemonList.length - 1) {
       setPokemonIndex(pokemonIndex + 1);
     }
@@ -20,16 +22,21 @@ function NavBar({ pokemonIndex, pokemonList, setPokemonIndex }: NavBarProps) {
     if (pokemonIndex > 0) {
       setPokemonIndex(pokemonIndex - 1);
     }
-  };
+  };*/
 
   return (
-    <div>
-      <button type="button" onClick={handlePrevious}>
-        Précédent
-      </button>
-      <button type="button" onClick={handleNext}>
-        Suivant
-      </button>
+    <div className="container">
+      {pokemonList.map((element, i) => (
+        <li key={element.name}>
+          <button
+            onClick={() => {
+              setPokemonIndex(i);
+            }}
+          >
+            {element.name}
+          </button>
+        </li>
+      ))}
     </div>
   );
 }
