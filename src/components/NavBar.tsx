@@ -30,6 +30,9 @@ function NavBar({ pokemonIndex, pokemonList, setPokemonIndex }: NavBarProps) {
         <li key={element.name}>
           <button
             onClick={() => {
+              if (element.name.toLowerCase() === "pikachu") {
+                alert("pika pikachu !!!");
+              }
               setPokemonIndex(i);
             }}
           >

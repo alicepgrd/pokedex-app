@@ -2,8 +2,13 @@ import "./App.css";
 import { useState } from "react";
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
+
   const pokemonList = [
     {
       name: "bulbasaur",
