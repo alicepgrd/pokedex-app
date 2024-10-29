@@ -8,7 +8,7 @@ interface PokemonCardProps {
 function PokemonCard({ pokemon }: PokemonCardProps) {
   return (
     <div>
-      <figure>
+      <figure className="card">
         {pokemon.imgSrc ? (
           <img src={pokemon.imgSrc} alt="imagecarte"></img>
         ) : (
